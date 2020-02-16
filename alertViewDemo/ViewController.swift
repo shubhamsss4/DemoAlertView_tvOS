@@ -12,9 +12,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.configureAlertView()
+    }
+    
+    func configureAlertView() {
+        let alertView = UIAlertController(title: "Demo Alert", message: "This is an Demo Alert Message", preferredStyle: .alert)
+        alertView.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alertView, animated: true, completion: nil)
+    }
 }
 
